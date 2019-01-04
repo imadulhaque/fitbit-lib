@@ -1,8 +1,8 @@
 import {ActivitiesStepsModel} from "./models/ActivitiesStepsModel";
 import {FitbitToken} from "./models/FitbitToken";
-var request = require( 'request' );
-var moment  = require( 'moment' );
-var async   = require( 'async' );
+import * as request from 'request';
+import * as moment from 'moment';
+import * as async from 'async';
 
 export interface IFitbitRefreshTokenListener
 {
@@ -51,9 +51,7 @@ export interface FitbitOptionModel
 
 export class Fitbit implements IFitbit
 {
-
     private token:any;
-    private refreshTokenListener:IFitbitRefreshTokenListener;
 
     constructor( private config:FitbitOptionModel, private refreshTokenListener?:IFitbitRefreshTokenListener )
     {
